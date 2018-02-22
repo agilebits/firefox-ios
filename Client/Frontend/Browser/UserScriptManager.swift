@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import WebKit
+import OnePasswordExtension
 
 class UserScriptManager {
 
@@ -23,5 +24,6 @@ class UserScriptManager {
                 tab.webView?.configuration.userContentController.addUserScript(userScript)
             }
         }
+		OnePasswordExtension.shared().configureUserContentController(tab.webView?.configuration.userContentController)
     }
 }
